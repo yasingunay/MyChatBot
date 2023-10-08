@@ -1,14 +1,9 @@
-{% extends 'chatbot/layout.html' %}
-
-
-{% block content %}
+{% extends 'chatbot/layout.html' %} {% block content %}
 <div class="chat-container">
   <div class="card flex-grow-1">
     <div class="card-header bg-primary text-white">Chat</div>
     <div class="card-body messages-box">
-      
       <ul class="list-unstyled messages-list">
-        
         <li class="message received">
           <div class="message-text">
             <div class="message-sender">
@@ -20,23 +15,24 @@
           </div>
         </li>
       </ul>
-      
     </div>
-    <br><br>
-    <br><br>
-    <br><br>
+    <br /><br />
+    <br /><br />
+    <br /><br />
   </div>
   <form class="message-form">
     {%csrf_token%}
     <div class="input-group">
-      <input type="text" class="form-control message-input" placeholder="Type your message...">
+      <input
+        type="text"
+        class="form-control message-input"
+        placeholder="Type your message..."
+      />
       <div class="input-group-append">
         <button type="submit" class="btn btn-primary btn-send">Send</button>
       </div>
     </div>
   </form>
 </div>
-
-
 
 {% endblock %}

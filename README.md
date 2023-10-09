@@ -22,11 +22,13 @@ This project is a chatbot implementation that allows users to interact with an A
 ## Skills
 * Javascript
 * Fetch calls
+* API
 * Django
 * Python
 * DOM
 * HTML
 * CSS
+  
 
 
 

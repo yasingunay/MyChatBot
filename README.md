@@ -6,7 +6,7 @@ This project is a chatbot implementation that allows users to interact with an A
 
 ## Table of Contents
 
-- [Skills](#Skills)
+
 - [Screenshots](#Screenshots)
 - [Project Overview](#project-overview)
 - [Features](#features)
@@ -17,15 +17,8 @@ This project is a chatbot implementation that allows users to interact with an A
 - [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Skills](#Skills)
 
-## Skills
-* Javascript
-* Fetch calls
-* Django
-* Python
-* DOM
-* HTML
-* CSS
 
 ## Screenshots
 ![index](screenshots/chatbot.png)
@@ -116,6 +109,14 @@ The project relies on the following Python packages and libraries:
 
 Contributions to this project are welcome! If you have ideas for improvements or new features, please open an issue or submit a pull request.
 
+## Skills
+* Javascript
+* Fetch calls
+* Django
+* Python
+* DOM
+* HTML
+* CSS
 
 
 

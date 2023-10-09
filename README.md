@@ -20,15 +20,17 @@ This project is a chatbot implementation that allows users to interact with an A
 
 
 ## Skills
-* Javascript
-* Fetch calls
-* API
-* Django
-* Python
-* DOM
-* HTML
-* CSS
-  
+
+The development of MyChatBot encompasses a wide range of skills, including:
+
+- **Javascript**: Utilized for real-time updates and dynamic interactions in the chat interface.
+- **Fetch Calls**: Used to communicate with external APIs like the Bard API for generating chatbot responses.
+- **API Integration**: MyChatBot leverages the Bard API to provide users with meaningful responses.
+- **Django**: The backbone of the application, handling user authentication, session management, and database operations.
+- **Python**: Used for back-end development and managing server-side logic.
+- **DOM Manipulation**: Enables dynamic updates in the user interface.
+- **HTML & CSS**: Creating the structure and styling for the web application.
+- And more...
 
 
 

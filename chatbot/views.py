@@ -130,7 +130,7 @@ def login_view(request):
         else:
             return render(
                 request,
-                "network/login.html",
+                "chatbot/login.html",
                 {"message": "Invalid username and/or password."},
             )
     else:

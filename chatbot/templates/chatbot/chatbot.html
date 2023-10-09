@@ -19,7 +19,7 @@ Chatbot
                 {% for chat in chat_history %}
                <!-- Add your chat history here -->
                 <li class="list-group-item" onclick="loadChatHistory('{{ chat.session_id }}')">
-                    {{ chat.message}}
+                    {{ chat.message|slice:":30"}}...
                 </li>
                {% endfor %}
               
@@ -29,7 +29,7 @@ Chatbot
       <div class="col-md-9">
          <div class="chat-container">
             <div class="card flex-grow-1">
-               <div class="card-header bg-primary text-white">Chat</div>
+               <div class="card-header ">Chat</div>
                <div class="card-body messages-box">
                   <ul class="list-unstyled messages-list">
                      <!-- Add your chat messages here -->
@@ -87,7 +87,7 @@ Chatbot
           const message = messages[i];
           const response = responses[i];
           const messageElement = `
-            <li class="message received">
+            <li class="message sent">
               <div class="message-text">
                 <div class="message-sender">
                   <b>You</b>
@@ -97,7 +97,7 @@ Chatbot
                 </div>
               </div>
             </li>
-            <li class="message sent">
+            <li class="message received">
               <div class="message-text">
                 <div class="message-sender">
                   <b>AI Chatbot</b>
@@ -116,9 +116,6 @@ Chatbot
         console.error('Fetch error:', error);
       });
   }
-
-
-
 
    $(document).ready(function() {
       $(".btn-toggle-history").click(function() {

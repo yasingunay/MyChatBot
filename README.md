@@ -115,7 +115,7 @@ The project relies on the following Python packages and libraries:
 - **Django**: A Python web framework for building web applications.
 - **Bard API**: An external API for generating responses to user messages.
 - **Python dotenv**: For loading environment variables from a `.env` file.
-- **requests**: For making HTTP requests to the Bard API.
+
 
 ## Usage
 

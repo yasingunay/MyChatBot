@@ -13,6 +13,9 @@ This project is a chatbot implementation that allows users to interact with an A
 * HTML
 * CSS
 
+## Screenshots
+![index](screenshots/chatbot.png)
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)

@@ -42,7 +42,7 @@ def generate_new_session_id():
 
     return str(uuid.uuid4())
 
-
+@login_required(login_url="/login")
 def index(request):
     chat_history = []
 

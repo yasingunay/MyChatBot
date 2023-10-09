@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             messageItem.innerHTML = `
             <div class="message-text">
             <div class="message-sender">
-                <b>You</b>
+                <b>AI Chatbot</b>
                 </div>
                 <div class="message-content">
                 ${response}

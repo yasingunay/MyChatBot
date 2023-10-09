@@ -6,11 +6,6 @@ Chatbot
 <div class="container">
    <div class="row">
       <div class="col-md-3">
-        <form method="post" action="{% url 'index' %}">
-            {% csrf_token %}
-            <button type="submit" id="new-chat-button"  name="start_new_chat">Start New Chat</button>
-            <input type="hidden" name="new_session">
-        </form>
          <button
             class="btn btn-primary btn-toggle-history"
             data-toggle="collapse"
@@ -27,7 +22,7 @@ Chatbot
                     {{ chat.message}}
                 </li>
                {% endfor %}
-               <!-- Add more chat history items as needed -->
+              
             </ul>
          </div>
       </div>

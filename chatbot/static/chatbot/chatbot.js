@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const messagesList = document.querySelector(".messages-list");
     const messageForm = document.querySelector(".message-form");
@@ -57,3 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 });
+
+
+

@@ -1,38 +1,136 @@
-{% extends 'chatbot/layout.html' %} {% block content %}
-<div class="chat-container">
-  <div class="card flex-grow-1">
-    <div class="card-header bg-primary text-white">Chat</div>
-    <div class="card-body messages-box">
-      <ul class="list-unstyled messages-list">
-        <li class="message received">
-          <div class="message-text">
-            <div class="message-sender">
-              <b>AI Chatbot</b>
-            </div>
-            <div class="message-content">
-              Hi, I am your AI Chatbot, you can ask me anything.
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <br /><br />
-    <br /><br />
-    <br /><br />
-  </div>
-  <form class="message-form">
-    {%csrf_token%}
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control message-input"
-        placeholder="Type your message..."
-      />
-      <div class="input-group-append">
-        <button type="submit" class="btn btn-primary btn-send">Send</button>
+{% extends 'chatbot/layout.html' %} 
+{% block title %}
+Chatbot
+{% endblock %}
+{% block body %}
+<div class="container">
+   <div class="row">
+      <div class="col-md-3">
+        <form method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+            <button type="submit" id="new-chat-button"  name="start_new_chat">Start New Chat</button>
+            <input type="hidden" name="new_session">
+        </form>
+         <button
+            class="btn btn-primary btn-toggle-history"
+            data-toggle="collapse"
+            data-target="#chat-history"
+            aria-expanded="false"
+         >
+            Chat History
+         </button>
+         <div id="chat-history" class="collapse history-container">
+            <ul class="list-group">
+                {% for chat in chat_history %}
+               <!-- Add your chat history here -->
+                <li class="list-group-item" onclick="loadChatHistory('{{ chat.session_id }}')">
+                    {{ chat.message}}
+                </li>
+               {% endfor %}
+               <!-- Add more chat history items as needed -->
+            </ul>
+         </div>
       </div>
-    </div>
-  </form>
+      <div class="col-md-9">
+         <div class="chat-container">
+            <div class="card flex-grow-1">
+               <div class="card-header bg-primary text-white">Chat</div>
+               <div class="card-body messages-box">
+                  <ul class="list-unstyled messages-list">
+                     <!-- Add your chat messages here -->
+                     <li class="message received">
+                        <div class="message-text">
+                           <div class="message-sender">
+                              <b>AI Chatbot</b>
+                           </div>
+                           <div class="message-content">
+                              Hi, I am your AI Chatbot, you can ask me anything.
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <form class="message-form">
+               {% csrf_token %}
+               <div class="input-group">
+                  <input
+                     type="text"
+                     class="form-control message-input"
+                     placeholder="Type your message..."
+                     />
+                  <div class="input-group-append">
+                     <button type="submit" class="btn btn-primary btn-send">Send</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
 </div>
 
+<script>
+   // Add JavaScript to toggle the chat history
+   function loadChatHistory(session_id) {
+    fetch(`/history/${session_id}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const messages = [];
+        const responses = [];
+        for (let i = 0; i < data["chats"].length; i++) {
+          messages.push(data["chats"][i]["message"]);
+          responses.push(data["chats"][i]["response"]);
+        }
+        const messagesList = document.querySelector(".messages-list");
+        messagesList.innerHTML = "";
+        for (let i = 0; i < messages.length; i++) {
+          const message = messages[i];
+          const response = responses[i];
+          const messageElement = `
+            <li class="message received">
+              <div class="message-text">
+                <div class="message-sender">
+                  <b>You</b>
+                </div>
+                <div class="message-content">
+                  ${message}
+                </div>
+              </div>
+            </li>
+            <li class="message sent">
+              <div class="message-text">
+                <div class="message-sender">
+                  <b>AI Chatbot</b>
+                </div>
+                <div class="message-content">
+                  ${response}
+                </div>
+              </div>
+            </li>
+          `;
+          messagesList.innerHTML += messageElement;
+        }
+       
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+  }
+
+
+
+
+   $(document).ready(function() {
+      $(".btn-toggle-history").click(function() {
+         $("#chat-history").collapse("toggle");
+      });
+   });
+
+   
+</script>
 {% endblock %}

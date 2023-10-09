@@ -21,6 +21,8 @@ This project is a chatbot implementation that allows users to interact with an A
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Project Structure](#project-structure)
+- [Distinctiveness](#Distinctiveness)
+- [Complexity](#Complexity)
 - [Getting Started](#getting-started)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
@@ -48,6 +50,24 @@ The project is structured as follows:
 - `requirements.txt`: Lists the project's Python dependencies.
 - `templates/`: HTML templates for the web interface.
 - `static/`: Static files (CSS, JavaScript, etc.) for the web application.
+
+## Distinctiveness and Complexity
+
+### Distinctiveness
+The Chatbot Project distinguishes itself from other projects in this course through the following distinct features:
+
+- It implements a real-time AI chatbot that interacts with users, providing responses based on the Bard API.
+- Unlike other projects, which focus on common web application types, this project offers a unique conversational experience.
+- The project's primary focus is on user interaction and natural language processing, making it distinct from other projects.
+
+### Complexity
+The complexity of the Chatbot Project is evident in the following aspects:
+
+- Utilizes Django on the back-end, including models for users, chat sessions, and messages, establishing complex relationships.
+- Implements a real-time chat interface using JavaScript on the front-end, allowing users to have interactive conversations with the chatbot.
+- Adopts a mobile-responsive design to ensure usability on various devices.
+- Implements user authentication and authorization for chatbot access and chat history management.
+- Integrates external API (Bard API) for generating chatbot responses, enhancing the project's complexity.
 
 
 ## Getting Started

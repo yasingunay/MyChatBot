@@ -44,11 +44,15 @@ The Chatbot Project is a Django-based web application that leverages the Bard AP
 
 ## Features
 
-1. **User Authentication**: Users can register, log in, and log out to access the chatbot.
-2. **Chat History**: Users can view their chat history, including both their messages and the chatbot's responses.
-3. **Real-time Chat**: Messages sent by users and responses from the chatbot are displayed in real-time.
-4. **Responsive Design**: The web application is designed to be responsive and user-friendly on both desktop and mobile devices.
-5. **User-Friendly Interface**: The user interface is intuitive and easy to use, with a chat input box and chat history panel.
+1. **User Authentication**: MyChatBot offers secure user registration, login, and logout functionality. Users can create accounts to access the chatbot's features.
+
+2. **Chat History**: Users can review their chat history, providing a comprehensive record of both their messages and the chatbot's responses. This feature enhances user engagement and facilitates easy reference to previous conversations.
+
+3. **Real-time Chat**: MyChatBot provides a real-time chat experience. Messages sent by users and responses from the chatbot are instantly displayed in the chat interface, creating a seamless and dynamic conversation flow.
+
+4. **Responsive Design**: The web application is designed to be responsive, ensuring that it delivers an optimal user experience on a wide range of devices, including desktops, tablets, and mobile phones.
+
+5. **User-Friendly Interface**: The user interface is designed with user experience in mind. It features an intuitive chat input box and chat history panel, making it easy for users to interact with the chatbot.
 
 ## Project Structure
 
